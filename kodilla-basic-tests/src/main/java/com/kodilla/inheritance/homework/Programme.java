@@ -4,12 +4,12 @@ public class Programme {
 
     public static void main (String[] args){
 
-        Windows windows = new Windows(1985);
+        OperatingSystem windows = new Windows(1985);
         System.out.println("The first Windows operating system was created in " + windows.getYear());
-        windows.turnOff();
         windows.turnOn();
+        windows.turnOff();
 
-        MacOs macOs = new MacOs(1984);
+        OperatingSystem macOs = new MacOs(1984);
         System.out.println("The first MacOs system was created in "+ macOs.getYear());
         macOs.turnOff();
         macOs.turnOn();

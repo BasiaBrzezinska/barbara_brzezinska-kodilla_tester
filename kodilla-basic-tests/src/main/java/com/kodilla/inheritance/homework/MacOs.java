@@ -6,4 +6,16 @@ public class MacOs extends OperatingSystem {
         super(year);
     }
 
+    @Override
+    public void turnOn() {
+        System.out.println("System macOs jest włączony");
+
+    }
+
+    @Override
+    public void turnOff() {
+        System.out.println("System macOs jest wyłączony ");
+
+    }
+
 }
