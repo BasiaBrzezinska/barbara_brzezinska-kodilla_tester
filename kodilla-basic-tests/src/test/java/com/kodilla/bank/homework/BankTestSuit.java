@@ -117,7 +117,7 @@ public class BankTestSuit {
         cashMachines[3].addTransaction(300);
         cashMachines[1].addTransaction(200);
 
-        assertEquals(200, bank.getTotalAverageDeposit(),0.01);
+        assertEquals(250, bank.getTotalAverageDeposit(),0.01);
 
     }
 
@@ -131,7 +131,7 @@ public class BankTestSuit {
         cashMachines[3].addTransaction(300);
         cashMachines[1].addTransaction(-200);
 
-        assertEquals(200, bank.getTotalAverageDeposit(),0.01);
+        assertEquals(150, bank.getTotalAverageDeposit(),0.01);
 
     }
 
@@ -156,7 +156,7 @@ public class BankTestSuit {
         cashMachines[3].addTransaction(-300);
         cashMachines[1].addTransaction(-200);
 
-        assertEquals(-200, bank.getTotalAverageWithdrawal(),0.01);
+        assertEquals(-250, bank.getTotalAverageWithdrawal(),0.01);
 
     }
 
@@ -172,7 +172,7 @@ public class BankTestSuit {
         cashMachines[3].addTransaction(300);
         cashMachines[1].addTransaction(-200);
 
-        assertEquals(-200, bank.getTotalAverageWithdrawal(),0.01);
+        assertEquals(-100, bank.getTotalAverageWithdrawal(),0.01);
 
     }
 

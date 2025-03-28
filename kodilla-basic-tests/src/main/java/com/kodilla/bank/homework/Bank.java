@@ -58,7 +58,7 @@ public class Bank {
             CashMachine machine = cashMachines [i];
             count= count + machine.getAverageWithdrawal();
                 }
-        return count;
+        return count/cashMachines.length;
             };
 
     //średnią wartość wpłaty.
@@ -68,7 +68,7 @@ public class Bank {
             CashMachine machine = cashMachines [i];
             count = count + machine.getAverageDeposit();
         }
-        return count;
+        return count/cashMachines.length;
     }
 }
 
