@@ -1,14 +1,15 @@
 package com.kodilla.abstracts.homework;
 
-public class Doctor extends Job{
+public class Doctor extends Job {
 
     public Doctor() {
-        super(10.000, "Patients care and treatment");
+        super("Lecznie pacjentów", 10.000);
 
     }
 
     @Override
-    public void showResponsibilities () {
-        System.out.println("His responsibilities are: "+ responsibilities);
+    public String getResponsibilities (){
+        return "Lecznie pacjentów";
     }
+
 }

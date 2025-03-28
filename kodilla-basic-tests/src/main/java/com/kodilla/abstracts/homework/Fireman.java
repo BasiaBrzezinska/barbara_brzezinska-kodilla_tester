@@ -3,11 +3,12 @@ package com.kodilla.abstracts.homework;
 public class Fireman extends Job {
 
     public Fireman( ) {
-        super(7.000, "Firefighting and rescuing people");
+        super("Gaszenie pożarów", 7.000);
     }
 
     @Override
-    public void showResponsibilities() {
-        System.out.println("His responsibilities are: "+ responsibilities);
+    public String getResponsibilities (){
+        return "Gaszenie pożarów";
     }
+
 }

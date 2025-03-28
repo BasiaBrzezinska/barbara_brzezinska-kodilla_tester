@@ -3,11 +3,12 @@ package com.kodilla.abstracts.homework;
 public class Lawyer extends Job{
 
     public Lawyer() {
-        super(12.000, "Representing and defending his clients in court");
+        super("Reprezentowanie klientów w sądzie", 15.000);
     }
 
     @Override
-    public void showResponsibilities() {
-        System.out.println("Her responsibilities are: "+ responsibilities);
+    public String getResponsibilities (){
+        return "Obrona klientów w sądzie";
     }
+
 }

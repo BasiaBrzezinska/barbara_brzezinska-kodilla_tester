@@ -3,11 +3,12 @@ package com.kodilla.abstracts.homework;
 public class Teacher extends Job {
 
     public Teacher( ) {
-        super(5.000, "Teaching children at school");
+        super("Uczenie dzieci i młodzież w szkole", 6.000);
     }
 
     @Override
-    public void showResponsibilities() {
-        System.out.println("Her responsibilities are: "+ responsibilities);
+    public String getResponsibilities (){
+        return "Uczenie dzieci w szkole";
     }
+
 }
