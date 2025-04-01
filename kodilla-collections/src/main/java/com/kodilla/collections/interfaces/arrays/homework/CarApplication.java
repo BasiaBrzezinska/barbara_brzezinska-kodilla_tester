@@ -10,9 +10,11 @@ import java.util.Random;
 public class CarApplication {
 
     public static void main (String[] args){
-        Car[] cars = new Car[15];
+
+        Random random = new Random();
+        Car[] cars = new Car[random.nextInt(15)+1];
         for (int n = 0; n < cars.length; n++)
-           cars [n] = drawCar();
+            cars [n] = drawCar();
         for (Car car : cars)
             CarUtils.describeCar(car);
     }
@@ -20,20 +22,18 @@ public class CarApplication {
     public static Car drawCar (){
         Random random = new Random();
         int drawnCarBrand = random.nextInt(3);
-        double a = getRandomSize (random);
+        int speed = getRandomSpeed (random);
         if (drawnCarBrand == 0)
-            return new Ford(80);
+            return new Ford (speed);
         else if (drawnCarBrand == 1)
-            return new Kia(90);
+            return new Kia(speed);
         else {
-            double b = getRandomSize (random);
-            double c = getRandomSize (random);
-            return new Mercedes(120);
+            return new Mercedes(speed);
         }
     }
 
-    private static double getRandomSize(Random random) {
-        return random.nextDouble() * 100 + 1;
+    private static int getRandomSpeed (Random random) {
+        return random.nextInt(201);
     }
 
-    }
+}

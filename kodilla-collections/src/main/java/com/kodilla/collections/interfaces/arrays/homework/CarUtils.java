@@ -6,11 +6,13 @@ import com.kodilla.collections.interfaces.homework.Kia;
 import com.kodilla.collections.interfaces.homework.Mercedes;
 import com.kodilla.collections.interfaces.homework.CarRace;
 
+import java.text.MessageFormat;
+
 public class CarUtils {
     public static void describeCar(Car car) {
         System.out.println("..............................");
         System.out.println("Car brand " + getCarName(car));
-        System.out.println("The car is driving at speed " + car.getSpeed());
+        System.out.println("Car is driving with speed: " + car.getSpeed());
     }
 
     private static String getCarName(Car car) {
