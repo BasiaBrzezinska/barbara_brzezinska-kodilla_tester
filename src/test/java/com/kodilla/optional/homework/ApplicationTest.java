@@ -16,12 +16,10 @@ public class ApplicationTest {
         //given
         Student student = new Student("Edyta", null);
         //when
-        String teacherName = Optional.ofNullable(student.getTeacher())
-                .map(Teacher::getName)
-                .orElse ("Undefined");
+        student.getTeacherName();//to chyba teraz jest zbędne?
         //then
         String expected = "Undefined";
-        String result = teacherName;
+        String result = student.getTeacherName();
         assertEquals(expected, result);
     }
 
@@ -30,12 +28,10 @@ public class ApplicationTest {
         //given
         Student student = new Student("Anna", new Teacher("Pan Artur"));
         //when
-        String teacherName = Optional.ofNullable(student.getTeacher())
-                .map(Teacher::getName)
-                .orElse ("Undefined");
+        student.getTeacherName();
         //then
         String expected = "Pan Artur";
-        String result = teacherName;
+        String result = student.getTeacherName();
         assertEquals(expected, result);
     }
 

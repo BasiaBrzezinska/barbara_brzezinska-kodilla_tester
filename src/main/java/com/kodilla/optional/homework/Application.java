@@ -16,17 +16,9 @@ public class Application {
         students.add(new Student("Daria", new Teacher("Pani Ewa")));
         students.add(new Student("Edyta", null));
 
-        //Następnie przy pomocy pętli for-each wyświetl pary uczeń-nauczyciel
-        // (np. w formie "uczeń: Jan Kowalski, nauczyciel: Tomasz Nowak"). Wykorzystaj klasę Optional
-        // do tego, aby obsłużyć sytuacje, w których teacher == null. Wówczas w miejscu danych nauczyciela wyświetl
-        // tekst "<undefined>".
+        for (Student student : students) {
+            System.out.println("Student: " + student.getName() + ",  nauczyciel: " + student.getTeacherName());
 
-        for (Student student : students){
-            String teacherName = Optional.ofNullable(student.getTeacher())
-                            .map(Teacher::getName)
-                            .orElse("Undefined");
-
-            System.out.println("Student: " + student.getName() + ",  nauczyciel: " + teacherName);
         }
 
     }
