@@ -1,5 +1,9 @@
 package com.kodilla.spring.basic.dependency_injection.homework;
 
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class Notification implements NotificationService {
 
     @Override
