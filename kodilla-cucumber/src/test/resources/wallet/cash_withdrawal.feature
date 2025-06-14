@@ -1,26 +1,15 @@
 Feature: Cash withdrawal
 
-  Scenario: Successful withdrawal from a wallet in credit
+  Scenario Outline: Withdrawal various sum from wallet
     Given I have deposited $200 in my wallet
-    When I request $30
-    Then $30 should be dispensed
+    When I request $<requested>
+    Then $<dispensed> should be dispensed
 
-  Scenario: Withdrawal amount more than balance
-    Given I have deposited $200 in my wallet
-    When  I request $300
-    Then $0 should be dispensed
+    Examples:
+    | requested | dispensed |
+    | 30        | 30        |
+    | 300       | 0         |
+    | 200       | 200       |
+    | 0         | 0         |
+    | -50       | 0         |
 
-  Scenario: Withdrawal from wallet exactly what is the balance
-    Given I have deposited $200 in my wallet
-    When I request $200
-    Then $200 should be dispensed
-
-  Scenario: Withdrawal zero dollars
-    Given I have deposited $200 in my wallet
-    When I request $0
-    Then $0 should be dispensed
-
-  Scenario: Attempt to withdraw a negative amount
-    Given I have deposited $200 in my wallet
-    When I request $-50
-    Then $0 should be dispensed
