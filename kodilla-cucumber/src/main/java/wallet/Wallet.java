@@ -8,16 +8,18 @@ public class Wallet {
 
     }
 
-    public void deposit (int money) {
+    public String deposit (int money) {
         this.balance += money;
-
+        return "You deposited $" + money;
     }
 
-    public void debit(int amount) {
+    public String debit(int amount) {
         this.balance -= amount;
+        return "You have withdrawn $" + amount;
     }
 
     public int getBalance (){
+        System.out.println("your balance is "+ balance);
         return balance;
     }
 }
